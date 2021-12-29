@@ -39,7 +39,7 @@ export default function Pagination({
                 setCurrentPage(num);
                 setIsSelected(num);
               }}
-              href="!#"
+              href="#"
             >
               {num}
             </a>

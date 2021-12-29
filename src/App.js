@@ -1,6 +1,5 @@
-import "./App.css";
-import axios from "axios";
 import { useState, useEffect } from "react";
+import axios from "axios";
 import Pagination from "./components/Pagination";
 import Posts from "./components/Posts";
 
