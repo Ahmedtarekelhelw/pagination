@@ -31,7 +31,6 @@ function App() {
         <h3 className="text-primary mb-3">My Pagination</h3>
         <input
           type="number"
-          id="floatingInput"
           className="form-control w-50"
           placeholder="Enter Number of Posts"
           onChange={(e) => setPostPerPage(e.target.value)}

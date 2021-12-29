@@ -22,7 +22,7 @@ export default function Pagination({
             setCurrentPage(currentpage - 1);
             setIsSelected(currentpage - 1);
           }}
-          href="!#"
+          href="#"
         >
           Previous
         </a>
@@ -57,7 +57,7 @@ export default function Pagination({
             setCurrentPage(currentpage + 1);
             setIsSelected(currentpage + 1);
           }}
-          href="!#"
+          href="#"
         >
           Next
         </a>
