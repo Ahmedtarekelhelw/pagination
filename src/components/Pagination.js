@@ -14,7 +14,7 @@ export default function Pagination({
   }
 
   return (
-    <ul className="pagination">
+    <ul className="pagination justify-content-center flex-wrap">
       <li className={currentpage <= 1 ? "page-item disabled" : "page-item"}>
         <a
           className="page-link"

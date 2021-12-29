@@ -33,7 +33,11 @@ function App() {
           type="number"
           className="form-control w-50"
           placeholder="Enter Number of Posts"
-          onChange={(e) => setPostPerPage(e.target.value)}
+          onChange={(e) => {
+            {
+              e.target.value > 0 && setPostPerPage(e.target.value);
+            }
+          }}
         />
         {isloading ? (
           <h2>Loading.....</h2>
