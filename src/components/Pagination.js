@@ -9,6 +9,8 @@ export default function Pagination({
   const [isselected, setIsSelected] = useState(1);
   let paginationNumber = totalposts / postperpage;
   let number = [];
+
+  //for pagination button
   for (let i = 1; i <= Math.ceil(paginationNumber); i++) {
     number.push(i);
   }
@@ -22,30 +24,28 @@ export default function Pagination({
             setCurrentPage(currentpage - 1);
             setIsSelected(currentpage - 1);
           }}
-          href="#"
+          href="##"
         >
           Previous
         </a>
       </li>
-      {number.map((num) => {
-        return (
-          <li
-            key={num}
-            className={isselected === num ? "page-item active" : "page-item"}
+      {number.map((num) => (
+        <li
+          key={num}
+          className={isselected === num ? "page-item active" : "page-item"}
+        >
+          <a
+            className="page-link"
+            onClick={() => {
+              setCurrentPage(num);
+              setIsSelected(num);
+            }}
+            href="##"
           >
-            <a
-              className="page-link"
-              onClick={() => {
-                setCurrentPage(num);
-                setIsSelected(num);
-              }}
-              href="#"
-            >
-              {num}
-            </a>
-          </li>
-        );
-      })}
+            {num}
+          </a>
+        </li>
+      ))}
       <li
         className={
           currentpage >= paginationNumber ? "page-item disabled" : "page-item"
@@ -57,7 +57,7 @@ export default function Pagination({
             setCurrentPage(currentpage + 1);
             setIsSelected(currentpage + 1);
           }}
-          href="#"
+          href="##"
         >
           Next
         </a>

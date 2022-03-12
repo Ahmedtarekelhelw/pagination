@@ -20,9 +20,17 @@ function App() {
   }, []);
 
   let currentPosts = () => {
-    let lastIndexofPosts = currentpage * postperpage;
+    let lastIndexofPosts = currentpage * postperpage; //hint to me not you: because slice not take the last number
     let firstIndexofPosts = lastIndexofPosts - postperpage;
     return posts.slice(firstIndexofPosts, lastIndexofPosts);
+  };
+
+  const onChange = (e) => {
+    if (e.target.value < 1) {
+      e.target.value = 1;
+    } else {
+      setPostPerPage(e.target.value);
+    }
   };
 
   return (
@@ -33,11 +41,7 @@ function App() {
           type="number"
           className="form-control w-50"
           placeholder="Enter Number of Posts"
-          onChange={(e) => {
-            {
-              e.target.value > 0 && setPostPerPage(e.target.value);
-            }
-          }}
+          onChange={onChange}
         />
         {isloading ? (
           <h2>Loading.....</h2>
